@@ -7,6 +7,7 @@ body{
     height: 100vh;
     align-items: center;
     background-color: azure;
+    transition: .4s;
 }
 
 .label{
@@ -31,11 +32,12 @@ input{
     top: 4px;
     left: 4px;
     animation: lightModeOn .4s linear backwards;
+    box-shadow: 0 2px 4px rgba(0,0,0,.3);
     
 }
 
 input:checked + .label{
-    background-color: darkred;
+    background-color: rgb(255, 172, 172);
 }
 
 input:checked + .label .switch{
