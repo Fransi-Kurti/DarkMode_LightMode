@@ -1,6 +1,8 @@
 const inputEl = document.getElementById("dark-mode");
 const body = document.querySelector("body");
 
+inputEl.checked = JSON.parse(localStorage.getItem("mode"));
+
 
 changeBodyColor();
 
@@ -14,4 +16,10 @@ function changeBodyColor(){
 
 inputEl.addEventListener("input", ()=>{
     changeBodyColor();
-})
+    saveLocalStorage();
+});
+
+
+function saveLocalStorage(){
+    localStorage.setItem("mode", JSON.stringify(inputEl.checked));
+}
