@@ -1,8 +1,62 @@
 body{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     display: flex;
     justify-content: center;
     height: 100vh;
     align-items: center;
+    background-color: azure;
+}
+
+.label{
+    position: relative;
+    width: 250px;
+    height: 125px;
+    cursor: pointer;
+    background-color: gray;
+    border-radius: 62.5px;
+}
+
+input{
+    visibility: hidden;
+}
+
+.switch{
+    width: 117px;
+    height: 117px;
+    background-color: azure;
+    border-radius: 50%;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    animation: lightModeOn .4s linear backwards;
+    
+}
+
+input:checked + .label{
+    background-color: darkred;
+}
+
+input:checked + .label .switch{
+    animation: darkModeOn .4s linear forwards;
+}
+
+@keyframes darkModeOn {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(125px);
+    }
+    
+}
+@keyframes lightModeOn {
+    0%{
+        transform: translateX(133px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+    
 }
